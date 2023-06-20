@@ -7,22 +7,41 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/qrText"
-        android:padding="40dp"
+        android:layout_marginTop="20dp"
+        android:text="EMAIL"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        />
+
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailText"
+        android:padding="20dp"
         android:background="@android:drawable/editbox_background"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/qrButton"
-        android:text="Generate"
+        android:id="@+id/TicketButton"
+        android:text="GET TICKETS"
         android:layout_marginTop="20dp" />
-    <ImageView
+    <ListView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/qrOutput"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"/>
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:id="@+id/listView"/>
+
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/qrOutput"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:adjustViewBounds="true"/>-->
 </LinearLayout>
