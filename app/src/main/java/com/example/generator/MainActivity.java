@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        System.out.println(position);
                         Ticket ticket = ticketList.get(position);
                         Intent intent = new Intent(context, QRActivity.class);
                         intent.putExtra("ticket", ticket.toString());
