@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -38,7 +39,13 @@ public class QRActivity extends AppCompatActivity {
         qrButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String sText = getIntent().getExtras().getString("ticket");
+                String data = getIntent().getExtras().getString("ticket");
+                String sText = null;
+                try {
+                    sText = CryptoProvider.encode(CryptoProvider.readPublicKey(), data);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 Hashtable hints = new Hashtable();
                 hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
                 MultiFormatWriter writer = new MultiFormatWriter();
